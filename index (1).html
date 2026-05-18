@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Student Profile</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding-top: 100px; 
+                background-color: #f0f0f0;
+            }
+
+            header {
+                width: 100%; 
+                height: 80px;
+                background-color: rgb(23, 43, 97);
+                position: fixed;
+                top: 0; 
+                left: 0; 
+                border-bottom: 3px solid rgb(219, 219, 219);
+                text-align: center;
+            }
+
+            header h1 {
+                color: white;
+                font-size: 24px;
+                display: inline-block;
+                margin-right: 50px;
+            }
+
+            header a {
+                color: white;
+                font-size: 18px;
+                font-style: italic;
+                text-decoration: none;
+                margin-right: 20px;
+            }
+
+            .content-box {
+                width: 800px;
+                margin: 20px auto;
+                padding: 20px;
+                background-color: white;
+                border: 2px solid rgb(23, 43, 97);
+                border-radius: 15px;
+            }
+
+            #img1 {
+                width: 200px;
+                height: 200px;
+                border-radius: 15px;
+                float: left;
+                margin-right: 20px;
+            }
+
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 20px;
+            }
+
+            td {
+                border: 1px solid black;
+                padding: 10px;
+                text-align: center;
+            }
+
+            footer {
+                text-align: center;
+                padding: 20px;
+                background-color: rgb(23, 43, 97);
+                color: white;
+                margin-top: 40px;
+            }
+        </style>
+    </head>
+    
+    <body id="myBody">
+        <header>
+            <h1>Student Profile</h1>
+            <a href="#about">About</a>
+            <a href="#tools">Tools</a>
+            <a href="#contact">Contact</a>
+        </header>
+        
+        <div id="about" class="content-box">
+            <h2>About me!</h2>
+            <img id="img1" src="https://globalindianschool.org/my/wp-content/uploads/2023/01/What-is-Self-Learning.png" alt="Profile">
+            <p>Hello! My name is Iliyas. I am a 10th grade student at Karagandy BIL.</p>
+            <br style="clear: both;">
+        </div>
+
+        <div id="tools" class="content-box">
+            <h2>JS Tools</h2>
+            
+            <input type="text" id="userName" placeholder="Your name">
+            <button onclick="sayHello()">Submit</button>
+            <h3 id="helloText">Welcome!</h3>
+            
+            <hr>
+            
+            <button onclick="makeDark()">Change Color</button>
+            <button onclick="showAlert()">Show Alert</button>
+            
+            <hr>
+
+            <p id="simpleText">Original text.</p>
+            <button onclick="changeHTML()">Change Text</button>
+            
+            <hr>
+
+            <div id="secretBox" style="display: none;">
+                <p>Hidden content is here!</p>
+            </div>
+            <button onclick="showSecret()">Show Hidden</button>
+        </div>
+
+        <div id="contact" class="content-box">
+            <h2>Contact</h2>
+            
+            <form>
+                <input type="text" placeholder="Write feedback">
+                <button type="button">Send</button>
+            </form>
+
+            <table>
+                <tr><td>Email:</td><td>ilyas@gmail.com</td></tr>
+                <tr><td>Phone Number:</td><td>+7(777) 777 77 77</td></tr>
+            </table>
+        </div>
+
+        <footer>
+            <p>End of project</p>
+        </footer>
+
+        <script>
+            function sayHello() {
+                let name = document.getElementById("userName").value;
+                document.getElementById("helloText").innerHTML = "Welcome, " + name + "!";
+            }
+
+            function makeDark() {
+                document.getElementById("myBody").style.backgroundColor = "lightblue";
+            }
+
+            function showAlert() {
+                alert("Hello from JS!");
+            }
+
+            function changeHTML() {
+                document.getElementById("simpleText").innerHTML = "Text changed by innerHTML!";
+            }
+
+            function showSecret() {
+                document.getElementById("secretBox").style.display = "block";
+            }
+        </script>
+    </body>
+</html>
